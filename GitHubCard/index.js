@@ -57,8 +57,53 @@ const followersArray = [];
     const pBio = document.createElement('p');
     const githubUrl = document.createElement('a');
 
-    // 
-  }
+    // Giving DivCard kids
+    divCard.appendChild(imgUrl);
+    divCard.appendChild(divInfo);
+
+    // Giving DivInfo kids
+    divInfo.appendChild(h3Name);
+    divInfo.appendChild(pUserName);
+    divInfo.appendChild(pLocation);
+    divInfo.appendChild(pProfile);
+    divInfo.appendChild(pFollowers);
+    divInfo.appendChild(pFollowing);
+    divInfo.appendChild(pBio);
+    
+    //  Giving pProfile a child
+    pProfile.appendChild(githubUrl);
+
+    // Adding Div Mods
+    divCard.classList.add('card');
+    divInfo.classList.add('card-info');
+
+    // Adding img mods
+    imgUrl.src = objectThing[0].avatar.url;
+
+    // Adding H3 Mods
+    h3Name.classList.add('name');
+    h3Name.textContent = objectThing[0].name;
+
+    // Adding githubUrl Mods
+    githubUrl.href = objectThing[0].html_url;
+    githubUrl.textContent = objectThing[0].html_url;
+
+    // Adding P mods
+    pUserName.classList.add('username');
+    pUserName.textContent = objectThing[0].login;
+
+    pLocation.textContent = objectThing[0].location;
+
+    pProfile.textContent = githubUrl;
+
+    pFollowers.textContent = objectThing[0].followers;
+    pFollowing.textContent = objectThing[0].following;
+
+    pBio.textContent = objectThing[0].bio;
+
+    // Returning the component 
+    return divCard;
+  };
 
   //   <div class="card">
   //     <img src={image url of user} />

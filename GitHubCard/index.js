@@ -5,7 +5,7 @@ import axios from 'axios';
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
-const awesomeData = []
+const awesomeData = [];
 
 axios.get('https://api.github.com/users/Magical-Keyshawn-Jones')
 .then(object => awesomeData.push(object.data))
@@ -38,25 +38,43 @@ console.log(awesomeData);
 
 const followersArray = [];
 
-/*
-  STEP 3: Create a function that accepts a single object as its only argument.
-    Using DOM methods and properties, create and return the following markup:
 
-    <div class="card">
-      <img src={image url of user} />
-      <div class="card-info">
-        <h3 class="name">{users name}</h3>
-        <p class="username">{users user name}</p>
-        <p>Location: {users location}</p>
-        <p>Profile:
-          <a href={address to users github page}>{address to users github page}</a>
-        </p>
-        <p>Followers: {users followers count}</p>
-        <p>Following: {users following count}</p>
-        <p>Bio: {users bio}</p>
-      </div>
-    </div>
-*/
+  // STEP 3: Create a function that accepts a single object as its only argument.
+  //   Using DOM methods and properties, create and return the following markup:
+
+  const gitCardMaker = objectThing => {
+
+    // DOM Holders
+    const divCard = document.createElement('div');
+    const divInfo = document.createElement('div');
+    const imgUrl = document.createElement('img');
+    const h3Name = document.createElement('h3');
+    const pUserName = document.createElement('p');
+    const pLocation = document.createElement('p');
+    const pProfile = document.createElement('p');
+    const pFollowers = document.createElement('p');
+    const pFollowing = document.createElement('p');
+    const pBio = document.createElement('p');
+    const githubUrl = document.createElement('a');
+
+    // 
+  }
+
+  //   <div class="card">
+  //     <img src={image url of user} />
+  //     <div class="card-info">
+  //       <h3 class="name">{users name}</h3>
+  //       <p class="username">{users user name}</p>
+  //       <p>Location: {users location}</p>
+  //       <p>Profile:
+  //         <a href={address to users github page}>{address to users github page}</a>
+  //       </p>
+  //       <p>Followers: {users followers count}</p>
+  //       <p>Following: {users following count}</p>
+  //       <p>Bio: {users bio}</p>
+  //     </div>
+  //   </div>
+
 
 /*
   List of LS Instructors Github username's:
